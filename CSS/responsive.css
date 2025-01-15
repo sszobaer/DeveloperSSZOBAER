@@ -1,0 +1,25 @@
+@media (max-width: 992px) {
+    .header-area .main-menu .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .header-area .main-menu .nav-item .nav-link {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-area .main-menu .navbar-brand img {
+        width: 100px; /* Resize logo for smaller screens */
+    }
+
+    .header-area .main-menu .navbar {
+        padding: 1rem;
+    }
+
+    .header-area .main-menu .nav-item .nav-link {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+}
