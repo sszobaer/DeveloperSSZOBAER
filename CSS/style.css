@@ -1,36 +1,470 @@
-/* Import fonts and variables */
+
+/* import fonts from fonts.css file */ 
 @import url(./fonts.css);
-@import url(./Partials/variables.css);
 
-/* Start Navigation */
-.header-area .main-menu .navbar .navbar-brand {
-    padding: 0 2rem 0 5rem;
+
+/* css variables */ 
+@import url(./partials/_variables.css);
+
+/* import global styling */ 
+@import url(./partials/_global.css);
+
+
+/* start navigation */ 
+.header_area {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
-.header-area .main-menu .navbar {
-    padding: 1rem 10rem; /* Adjusted padding */
+.header_area.scrolled {
+    background: var(--background-color);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-.header-area .main-menu .nav-item .nav-link {
-    font-family: var(--roboto);
+/* Navbar Styling */
+.header_area .main-menu .navbar {
+    padding: 1rem 10rem;
+    transition: padding 0.3s ease;
+}
+
+.header_area .main-menu .navbar-brand {
+    padding: 0 2rem;
+    transition: transform 0.3s ease;
+}
+
+.header_area .main-menu .nav-item .nav-link {
+    font: normal 500 15px/2px var(--roboto);
     text-transform: uppercase;
-    font-weight: 500;
-    padding: 1rem;
+    padding: 1.7rem;
     color: var(--title-color);
-    transition: color 0.3s, transform 0.3s;
+    transition: color 0.3s, transform 0.3s ease;
 }
 
-.header-area .main-menu .navbar-nav .nav-link.active {
-    background: var(--gradient-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.header-area .main-menu .navbar-nav .nav-link:hover {
-    background: var(--gradient-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.header_area .main-menu .nav-item .nav-link:hover {
+    color: var(--primary-color);
     transform: scale(1.1);
-    background-clip: text;
 }
+
+/* Active Link Styling */
+.header_area .main-menu .navbar-nav .active a {
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+/* Hover Effects */
+.header_area .main-menu .navbar-nav a:hover {
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateY(-2px);
+}
+
+/* Dropdown Menu */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown-menu {
+    display: none;
+    background: var(--background-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    margin-top: 1rem;
+}
+
+.dropdown-menu a {
+    padding: 10px 15px;
+    color: var(--title-color);
+    text-transform: none;
+    transition: background 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* Transitions */
+.header_area .main-menu .navbar, 
+.header_area .main-menu .nav-item .nav-link {
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* end navigation */ 
+
+/* Banner Area */ 
+
+.site-main #site-banner {
+    background: url(../img/banner/home-banner.jpg) no-repeat;
+    background-size: cover;
+}
+
+.site-main #site-banner .site-title h3{
+    padding-top: 35%;
+    font-weight: 500;
+}
+
+.site-main #site-banner .site-title h3::after{
+    height: 2px;
+    width: 18vw;
+    background: black;
+    display: inline-block;
+    margin-left: 5%;
+    transform: translateY(-10px);
+}
+
+.site-main #site-banner .site-title h1{
+    font-size: 5rem;
+}
+
+.site-main #site-banner .site-title h4{
+    font-size: 1.5rem;
+}
+
+.site-main #site-banner .banner-image > img{
+    padding: 7rem 0;
+    width: 90rem;
+}
+
+
+
+/* End Banner Area */ 
+
+/* Start About Area */ 
+
+.site-main #about-area{
+    padding: 8rem 5rem;
+}
+
+.site-main #about-area .about-title h2 > span{
+    display: block;
+    font: normal bold 49px/ 60px var(--roboto);
+    letter-spacing: 21px;
+}
+.about-title .paragraph .para {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    text-align: justify; 
+    line-height: 1.6;
+}
+
+.site-main #about-area .about-title .paragraph > p{
+    padding: .4rem 0;
+}
+
+/* End About Area */ 
+
+
+/* Services Area */ 
+
+.site-main #services-area{
+    padding: 3rem 2rem;
+}
+
+.site-main #services-area .services-title{
+    padding: 0 14rem;
+}
+
+.site-main #services-area .services-title h1{
+    font-size: 35px;
+}
+
+.site-main > #services-area .services{
+    background: rgba(248, 252, 253, 0.973);
+    padding: 2rem 0;
+    width: 16rem;
+    margin: 5rem .5rem;
+    transition: box-shadow .7s ease;
+}
+
+.site-main > #services-area .services:hover{
+    box-shadow: var(--box-shadow);
+}
+
+
+
+/* End Services Area */ 
+
+
+/* Project Area */ 
+
+.site-main #project-area{
+    padding: 4rem 0;
+}
+
+.site-main #project-area .button-group button{
+    background: transparent;
+    border: none;
+    font: normal 500 16px/130px var(--roboto);
+    text-transform: uppercase;
+}
+
+.site-main #project-area .button-group button + button{
+    padding-left: 3rem;
+}
+
+.site-main #project-area .grid .our-project > .title h4{
+    font: normal 700 25px/12px var(--roboto);
+}
+
+.site-main #project-area .grid .our-project .img a:hover img{
+    filter: brightness(1.1) drop-shadow(1px 8px 30px #b1afaf);
+}
+
+
+/* End Project Area */ 
+
+
+/* Start Skills Area */ 
+/* Default Styles (Desktop and larger screens) */
+.skillArea {
+    font-family: var(--roboto);
+    padding: 60px 0;
+    background-color: whitesmoke;
+}
+
+.skillConMain {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    column-gap: 100px;
+}
+
+.skillCon h5 {
+    font-size: 18px;
+    color: var(--gradient-color);
+    font-weight: 800;
+}
+
+.skillCon h3 {
+    font-size: 40px;
+    padding: 20px 0;
+    font-weight: 800;
+    color: var(--title-color);
+}
+
+.skillCon p {
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+}
+
+.progressArea {
+    width: 40%;
+    height: auto; /* Adjust height as needed */
+}
+
+.skillCon {
+    width: 40%;
+}
+
+.progressCon {
+    display: flex;
+    padding: 7px 0;
+    justify-content: space-between;
+}
+
+.progressCon h5 {
+    color: var(--gradient-color);
+}
+
+.progressCon p {
+    color: var(--gradient-color);
+}
+
+.whiteField {
+    height: 5px;
+    width: 100%;
+    background: black;
+    border-radius: 10px;
+}
+
+.achievementField {
+    height: 5px;
+    width: 85%;
+    background: var(--gradient-color);
+    border-radius: 10px;
+}
+
+/* Mobile and Medium Device Responsive Styles */
+@media (max-width: 768px) {
+    .skillConMain {
+        flex-direction: column; /* Stack vertically on medium screens */
+        column-gap: 0;
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .skillCon {
+        width: 100%; /* Make skillCon take full width */
+        padding: 20px; /* Added padding for better spacing */
+    }
+
+    .progressArea {
+        width: 100%; /* Make progress bar full width */
+    }
+
+    .progressCon {
+        flex-direction: column; /* Stack progress items vertically */
+        padding: 10px 0; /* Added padding for better spacing */
+    }
+
+    .skillCon h3 {
+        font-size: 28px; /* Adjust font size for smaller screens */
+    }
+
+    .skillCon p {
+        font-size: 16px; /* Adjust paragraph font size */
+    }
+}
+
+/* Small Device Responsive Styles */
+@media (max-width: 480px) {
+    .skillCon h3 {
+        font-size: 24px; /* Further reduce the font size */
+        padding: 10px 0;
+    }
+
+    .skillCon p {
+        font-size: 14px; /* Further reduce paragraph font size */
+    }
+
+    .progressArea {
+        width: 100%; /* Full width progress area */
+    }
+
+    .achievementField {
+        width: 70%; /* Slightly smaller achievement bar */
+    }
+
+    .skillCon {
+        padding: 15px; /* Added padding for smaller screens */
+    }
+
+    .progressCon {
+        padding: 15px 0; /* More padding on small screens */
+    }
+}
+
+
+/* End About Me */ 
+
+/* Subscribe me */ 
+
+.site-main #subscribe-us-area .subscribe{
+    background: url(../img/subscribe-bg.png) no-repeat;
+    padding: 10rem 0;
+    margin: 3rem auto;
+}
+
+.site-main #subscribe-us-area .subscribe .subscribe-title h4{
+    font: normal 700 30px/ 30px var(--roboto);
+    color: whitesmoke;
+}
+
+.site-main #subscribe-us-area .subscribe .subscribe-title p{
+    color: whitesmoke;
+    padding: 1rem 4rem;
+}
+
+.site-main #subscribe-us-area .subscribe form .input-textbox input{
+    width: 400px;
+    padding: 1.5rem 1rem;
+    border: 1px solid whitesmoke;
+    background: transparent;
+    color: white;
+    font: normal 500 17px/20px var(--roboto);
+}
+
+.site-main #subscribe-us-area .subscribe form .input-textbox input::placeholder{
+    color: whitesmoke;
+}
+
+.site-main #subscribe-us-area .subscribe form .btn-submit button{
+    background: whitesmoke;
+    color: #000;
+    padding: .7rem 2rem;
+}
+
+/* End subscribe me */ 
+/*Hire-me page form design*/
+.Hire-me-Area{
+    padding: 2rem 0rem;
+}
+.form {
+    padding: 20px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f9f9f9; 
+}
+
+.form ul {
+    list-style: none;
+    padding: 0;
+}
+
+.form ul li {
+    margin-bottom: 15px;
+}
+
+.form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form input[type="text"]::placeholder {
+    color: #aaa;
+}
+.button-hire-me {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    height: 50px; 
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* End Hire-me page form design */
+
+/* Footer Area */ 
+
+footer.footer-area{
+    padding: 5rem 0;
+    background: url(../img/footer-bg.png) no-repeat;
+}
+
+footer.footer-area .social h5{
+    font: normal 500 23px/ 30px var(--roboto);
+}
+
+footer.footer-area .social a > i{
+    font-size:22px;
+    padding: 2rem;
+    color: var(--border-color);
+}
+
+footer.footer-area .social a:hover > i{
+    color: var(--primary-color);
+}
+
+
+/* End Footer */ 
