@@ -33,8 +33,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./Magnific-Popup/website/_includes/logo.html
-          destination: ./_site
+          source: ./Magnific-Popup/website/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
